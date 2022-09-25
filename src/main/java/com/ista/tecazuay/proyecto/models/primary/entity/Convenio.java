@@ -18,6 +18,7 @@ public class Convenio implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_convenio;
 	private int numero_convenio;
+	private int numero_itv;
 	private String descripcion;
 	private Long id_empresa;
 	private Long id_coordinador;
@@ -61,4 +62,13 @@ public class Convenio implements Serializable {
 	public void setId_coordinador(Long id_coordinador) {
 		this.id_coordinador = id_coordinador;
 	}
+
+	public int getNumero_itv() {
+		return numero_itv;
+	}
+
+	public void setNumero_itv(int numero_itv) {
+		this.numero_itv = numero_itv;
+	}
+	
 }

@@ -2,15 +2,21 @@ package com.ista.tecazuay.proyecto.models.primary.entity.anexos;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name = "A1PlanFormacion", uniqueConstraints = {@UniqueConstraint(columnNames = {"id_anexo1"})})
+@Table(name = "A1PlanFormacion")
 public class A1_PlanFormacion implements Serializable{
 	/**
 	 * 
@@ -24,7 +30,11 @@ public class A1_PlanFormacion implements Serializable{
 	private String periodoEq;
 	private String AsignaturaRel;
 	private long Horas;
-	private long id_anexo;
+	
+	@ManyToOne(fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	@JoinColumn(name="id_anexo1")
+	private Anexo1 anexo1;
+	
 	public Long getId_A1PlanFormacion() {
 		return id_A1PlanFormacion;
 	}
@@ -55,17 +65,18 @@ public class A1_PlanFormacion implements Serializable{
 	public void setAsignaturaRel(String asignaturaRel) {
 		AsignaturaRel = asignaturaRel;
 	}
+	
+	public Anexo1 getAnexo1() {
+		return anexo1;
+	}
+	public void setAnexo1(Anexo1 anexo1) {
+		this.anexo1 = anexo1;
+	}
 	public long getHoras() {
 		return Horas;
 	}
 	public void setHoras(long horas) {
 		Horas = horas;
-	}
-	public long getId_anexo() {
-		return id_anexo;
-	}
-	public void setId_anexo(long id_anexo) {
-		this.id_anexo = id_anexo;
 	}
 	
 	

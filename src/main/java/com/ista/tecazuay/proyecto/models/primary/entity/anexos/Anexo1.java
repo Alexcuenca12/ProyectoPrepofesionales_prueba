@@ -10,8 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "anexo1")
@@ -26,12 +29,8 @@ public class Anexo1 implements Serializable {
 	private String url_doc;
 	private boolean estado;
 	
-	@OneToMany(fetch=FetchType.LAZY,cascade=CascadeType.ALL)
-	@JoinColumn(name="id_anexo1")
-	private List<A1_PlanFormacion> DetFormaciones;
-	@OneToMany(fetch=FetchType.LAZY,cascade=CascadeType.ALL)
-	@JoinColumn(name="id_anexo1")
-	private List<A1_PlanRotacion> DetRotaciones;
+	
+	
 	
 	public Long getId_anexo1() {
 		return id_anexo1;
@@ -56,18 +55,6 @@ public class Anexo1 implements Serializable {
 	}
 	public void setEstado(boolean estado) {
 		this.estado = estado;
-	}
-	public List<A1_PlanFormacion> getDetFormaciones() {
-		return DetFormaciones;
-	}
-	public void setDetFormaciones(List<A1_PlanFormacion> detFormaciones) {
-		DetFormaciones = detFormaciones;
-	}
-	public List<A1_PlanRotacion> getDetRotaciones() {
-		return DetRotaciones;
-	}
-	public void setDetRotaciones(List<A1_PlanRotacion> detRotaciones) {
-		DetRotaciones = detRotaciones;
 	}
 	
 

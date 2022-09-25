@@ -32,6 +32,12 @@ public class RealizaPracticaController {
 
 		return RealizaPracticaService.findAll();
 	}
+	
+	@GetMapping("/ListRealizaPrac/{idconv}")
+	public List<RealizaPractica> findbyconv(@PathVariable Long idconv) {
+
+		return RealizaPracticaService.findbyconv(idconv);
+	}
 
 	// BUSCAR
 	@GetMapping("/SearchRealizaPrac/{id}")
