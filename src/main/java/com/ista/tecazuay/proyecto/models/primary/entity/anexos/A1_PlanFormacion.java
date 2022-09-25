@@ -31,9 +31,9 @@ public class A1_PlanFormacion implements Serializable{
 	private String AsignaturaRel;
 	private long Horas;
 	
-	@ManyToOne(fetch=FetchType.LAZY,cascade=CascadeType.ALL)
-	@JoinColumn(name="id_anexo1")
-	private Anexo1 anexo1;
+	/*@ManyToOne(fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	@JoinColumn(name="id_anexo1")*/
+	private Long idanexo1;
 	
 	public Long getId_A1PlanFormacion() {
 		return id_A1PlanFormacion;
@@ -66,11 +66,13 @@ public class A1_PlanFormacion implements Serializable{
 		AsignaturaRel = asignaturaRel;
 	}
 	
-	public Anexo1 getAnexo1() {
-		return anexo1;
+	
+	
+	public Long getIdanexo1() {
+		return idanexo1;
 	}
-	public void setAnexo1(Anexo1 anexo1) {
-		this.anexo1 = anexo1;
+	public void setIdanexo1(Long idanexo1) {
+		this.idanexo1 = idanexo1;
 	}
 	public long getHoras() {
 		return Horas;
