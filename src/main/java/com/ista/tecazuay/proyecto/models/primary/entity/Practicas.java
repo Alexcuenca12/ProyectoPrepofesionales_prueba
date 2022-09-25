@@ -35,6 +35,7 @@ public class Practicas implements Serializable {
 	private Long id_empresa;
 	private Long id_docente_tutor;
 	private Long id_representante_empresa;
+	private Long id_convenio;
 
 	public Long getId_practicas() {
 		return id_practicas;
@@ -107,4 +108,13 @@ public class Practicas implements Serializable {
 	public void setId_representante_empresa(Long id_representante_empresa) {
 		this.id_representante_empresa = id_representante_empresa;
 	}
+
+	public Long getId_convenio() {
+		return id_convenio;
+	}
+
+	public void setId_convenio(Long id_convenio) {
+		this.id_convenio = id_convenio;
+	}
+	
 }
