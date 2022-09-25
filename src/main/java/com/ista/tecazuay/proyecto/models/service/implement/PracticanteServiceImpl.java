@@ -5,8 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import com.ista.tecazuay.proyecto.controllers.RealizaPracticaController;
 import com.ista.tecazuay.proyecto.models.primary.entity.Practicante;
+import com.ista.tecazuay.proyecto.models.primary.entity.RealizaPractica;
 import com.ista.tecazuay.proyecto.models.repository.primary.dao.IPracticanteDao;
 import com.ista.tecazuay.proyecto.models.service.IPracticanteService;
 
@@ -22,7 +25,9 @@ public class PracticanteServiceImpl implements IPracticanteService {
 
 		return (List<Practicante>) PracticanteDao.findAll();
 	}
-
+	
+	
+	
 	@Override
 	@Transactional
 	public Practicante save(Practicante practicante) {

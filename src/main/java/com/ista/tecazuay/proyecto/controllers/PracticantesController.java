@@ -1,5 +1,6 @@
 package com.ista.tecazuay.proyecto.controllers;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ista.tecazuay.proyecto.models.primary.entity.Practicante;
+import com.ista.tecazuay.proyecto.models.primary.entity.RealizaPractica;
 import com.ista.tecazuay.proyecto.models.service.IPracticanteService;
+import com.ista.tecazuay.proyecto.models.service.IRealizaPracticaService;
 
 @CrossOrigin(origins = { "http://localhost:4200" })
 @RestController
@@ -32,7 +35,8 @@ public class PracticantesController {
 
 		return PracticanteService.findAll();
 	}
-
+	
+	
 	// BUSCAR
 	@GetMapping("/SearchPracticante/{id}")
 	public Practicante show(@PathVariable Long id) {
