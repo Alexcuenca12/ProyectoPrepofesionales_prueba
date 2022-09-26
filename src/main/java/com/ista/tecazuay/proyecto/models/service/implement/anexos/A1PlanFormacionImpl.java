@@ -1,5 +1,6 @@
 package com.ista.tecazuay.proyecto.models.service.implement.anexos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,14 +8,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.tecazuay.proyecto.models.primary.entity.anexos.A1_PlanFormacion;
+import com.ista.tecazuay.proyecto.models.primary.entity.anexos.A1_PlanRotacion;
 import com.ista.tecazuay.proyecto.models.repository.primary.dao.anexos.IA1_PlanFormacionDao;
 import com.ista.tecazuay.proyecto.models.service.anexos.IA1_PlanFormacionService;
+
 @Service
-public class A1PlanFormacionImpl implements IA1_PlanFormacionService{
-	
+public class A1PlanFormacionImpl implements IA1_PlanFormacionService {
+
 	@Autowired
 	private IA1_PlanFormacionDao planFormacionDao;
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<A1_PlanFormacion> findAll() {
@@ -41,6 +44,20 @@ public class A1PlanFormacionImpl implements IA1_PlanFormacionService{
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		planFormacionDao.deleteById(id);
+	}
+
+	@Override
+	public List<A1_PlanFormacion> findbyanexo(Long idanexo) {
+		// TODO Auto-generated method stub
+		List<A1_PlanFormacion> planformacionrespuesta = new ArrayList<>();
+		List<A1_PlanFormacion> planformacion = (List<A1_PlanFormacion>) planFormacionDao.findAll();
+		for (int i = 0; i < planformacion.size(); i++) {
+			if (planformacion.get(i).getIdanexo1() == idanexo) {
+				planformacionrespuesta.add(planformacion.get(i));
+			}
+		}
+
+		return planformacionrespuesta;
 	}
 
 }

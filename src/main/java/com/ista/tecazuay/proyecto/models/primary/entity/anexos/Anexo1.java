@@ -18,13 +18,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "anexo1")
-public class Anexo1 implements Serializable {
+public class Anexo1 {
 
-	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_anexo1;
+	//private Long id_practica_real;
 	private String estado_firma;
 	private String url_doc;
 	private boolean estado;
@@ -56,6 +55,7 @@ public class Anexo1 implements Serializable {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
+	
 	
 
 	

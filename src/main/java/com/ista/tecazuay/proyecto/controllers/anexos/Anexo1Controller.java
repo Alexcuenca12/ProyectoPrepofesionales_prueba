@@ -32,6 +32,12 @@ public class Anexo1Controller {
 
 		return Anexo1Service.findAll();
 	}
+	// LISTAR
+		@GetMapping("/ListAnexo1RP/{id_realiza_practica}")
+		public List<Anexo1> findbyrealprac(Long id_realiza_practica) {
+
+			return Anexo1Service.findbyrealprac( id_realiza_practica);
+		}
 
 	// BUSCAR
 	@GetMapping("/SearchAnexo1/{id}")
