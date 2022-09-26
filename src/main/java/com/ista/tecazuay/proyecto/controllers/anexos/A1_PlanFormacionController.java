@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ista.tecazuay.proyecto.models.primary.entity.anexos.A1_PlanFormacion;
+import com.ista.tecazuay.proyecto.models.primary.entity.anexos.A1_PlanRotacion;
 import com.ista.tecazuay.proyecto.models.service.anexos.IA1_PlanFormacionService;
 
 
@@ -32,6 +33,11 @@ public class A1_PlanFormacionController {
 	public List<A1_PlanFormacion> indext(){
 		return planFormacionService.findAll();
 	}
+	@GetMapping("/planformaciona1/{idanexo}")
+	public List<A1_PlanFormacion> indext(@PathVariable Long idanexo){
+		return planFormacionService.findbyanexo(idanexo);
+	}
+	
 	
 	
 	//Metodo para Guardar Cliente
