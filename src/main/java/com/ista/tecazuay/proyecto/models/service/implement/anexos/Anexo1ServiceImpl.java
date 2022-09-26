@@ -50,16 +50,15 @@ public class Anexo1ServiceImpl implements IAnexo1Service {
 	@Transactional(readOnly = true)
 	public List<Anexo1> findbyrealprac(Long id_realiza_practica) {
 		// TODO Auto-generated method stub
-		List<Anexo1> anexo1respuesta=new ArrayList<>();
-		List<Anexo1> anexo1=(List<Anexo1>) Anexo1Dao.findAll();
+		List<Anexo1> anexo1respuesta = new ArrayList<>();
+		List<Anexo1> anexo1 = (List<Anexo1>) Anexo1Dao.findAll();
 		for (int i = 0; i < anexo1.size(); i++) {
-			if(anexo1.get(i).getId_practica_real()==id_realiza_practica) {
+			if (anexo1.get(i).getId_practica_real() == id_realiza_practica) {
 				anexo1respuesta.add(anexo1.get(i));
-				
-				
+
 			}
 		}
-		
+
 		return anexo1respuesta;
 	}
 }
