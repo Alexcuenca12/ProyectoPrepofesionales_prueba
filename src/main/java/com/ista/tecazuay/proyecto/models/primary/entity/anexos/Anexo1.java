@@ -23,7 +23,7 @@ public class Anexo1 {
 
 	@Id
 	private Long id_anexo1;
-	//private Long id_practica_real;
+	private Long id_practica_real;
 	private String estado_firma;
 	private String url_doc;
 	private boolean estado;
@@ -54,6 +54,12 @@ public class Anexo1 {
 	}
 	public void setEstado(boolean estado) {
 		this.estado = estado;
+	}
+	public Long getId_practica_real() {
+		return id_practica_real;
+	}
+	public void setId_practica_real(Long id_practica_real) {
+		this.id_practica_real = id_practica_real;
 	}
 	
 	
