@@ -32,6 +32,11 @@ public class A1_PlanRotacionController {
 		return planRotacionService.findAll();
 	}
 	
+	@GetMapping("/PlanRotaciona1/{idanexo}")
+	public List<A1_PlanRotacion> indext(@PathVariable Long idanexo){
+		return planRotacionService.findbyanexo(idanexo);
+	}
+	
 	
 	//Metodo para Guardar Cliente
 	@PostMapping("/PlanRotacion")

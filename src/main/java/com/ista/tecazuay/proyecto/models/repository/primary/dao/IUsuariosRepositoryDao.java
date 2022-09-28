@@ -15,8 +15,13 @@ public interface IUsuariosRepositoryDao extends JpaRepository<Usuario, Long> {
 
 	Boolean existsByCedula(String cedula);
 
+	public Usuario findByCorreo(String correo);
+
+	Boolean existsByCorreo(String correo);
+
 	// Metodos Query
-	@Query(value = "SELECT * FROM usuario WHERE cedula = ?", nativeQuery = true)
+	@Query(value = "SELECT * FROM usuarios WHERE cedula = ?", nativeQuery = true)
 	List<Usuario> buscarUsuario(String cedula);
 
+	public boolean existsByContrasenia(String contrasenia);
 }
