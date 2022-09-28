@@ -50,16 +50,18 @@ public class RepresentantesController {
 
 	// EDITAR
 	@PutMapping("/EditRepresentante/{id}")
-	/*@ResponseStatus(HttpStatus.CREATED)
+	@ResponseStatus(HttpStatus.CREATED)
 	public Representante update(@RequestBody Representante representante, @PathVariable Long id) {
 
 		Representante RepresentanteActual = RepresentanteService.findById(id);
-		RepresentanteActual.setApellido(representante.getApellido());
 		RepresentanteActual.setNombre(representante.getNombre());
-		RepresentanteActual.setEmail(representante.getEmail());
+		RepresentanteActual.setApellido(representante.getApellido());
+		RepresentanteActual.setCorreo(representante.getCorreo());
+		RepresentanteActual.setDireccion(representante.getDireccion());
+		RepresentanteActual.setTelefono(representante.getTelefono());
 
 		return RepresentanteService.save(RepresentanteActual);
-	}*/
+	}
 
 	// ELIMINAR
 	@DeleteMapping("/DeleteRepresentante/{id}")
