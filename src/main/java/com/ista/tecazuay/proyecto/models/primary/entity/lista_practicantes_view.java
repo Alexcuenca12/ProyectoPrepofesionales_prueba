@@ -20,8 +20,8 @@ public class lista_practicantes_view {
 	private int idrealizando;
 	private int idpractica;
 	private int idpracticante;
-	@MaybeNull
-	private int idanexo;
+	@Nullable
+	private Long idanexo;
 	private int idpersona;
 	private String apellidouno;
 	private String apellidodos;
