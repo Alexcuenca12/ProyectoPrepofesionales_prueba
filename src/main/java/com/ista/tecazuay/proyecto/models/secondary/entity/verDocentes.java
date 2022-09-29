@@ -22,12 +22,10 @@ public class verDocentes implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id_persona;
+	private Long id_docente;
 	private String cedula;
 	private String doc_nombres;
 	private String doc_abreviatura;
 	private String doc_titulo;
-	private String doc_categoria;
-	private String doc_carrera_cod;
-	private String doc_carrera;
 	
 }
