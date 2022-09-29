@@ -3,9 +3,12 @@ package com.ista.tecazuay.proyecto.secondary.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.ista.tecazuay.proyecto.models.secondary.entity.verDocentes;
 import com.ista.tecazuay.proyecto.models.secondary.service.IverDocenteService;
@@ -23,5 +26,14 @@ public class verDocentesRestController {
 	public List<verDocentes> index(){
 		return docenteService.findAll();
 	}
+	
+	@GetMapping("/listaDocentes/{id_persona}")
+	public verDocentes buscarXid(@PathVariable Long id_persona) {
+		return docenteService.findById(id_persona);
+		
+	}
+	
+	
+	
 	
 }
