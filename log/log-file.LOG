@@ -1817,3 +1817,149 @@ Caused by: org.postgresql.util.PSQLException: ERROR: la columna «id_rol» conti
 2022-09-28 16:34:35.921  INFO 19760 --- [RMI TCP Connection(24)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'primaryPersistenceUnit'
 2022-09-28 16:34:35.923  INFO 19760 --- [RMI TCP Connection(24)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-09-28 16:34:35.927  INFO 19760 --- [RMI TCP Connection(24)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-09-28 23:52:45.455  INFO 3576 --- [restartedMain] i.t.p.ProyectoPrepofesionalesApplication : Starting ProyectoPrepofesionalesApplication using Java 17.0.3 on BRA-015-YAN-026 with PID 3576 (C:\M4A_SPRING\Spring_M4A_Projects\ProyectoPrepofesionales_prueba\target\classes started by BRYAN_CABRERA in C:\M4A_SPRING\Spring_M4A_Projects\ProyectoPrepofesionales_prueba)
+2022-09-28 23:52:45.456  INFO 3576 --- [restartedMain] i.t.p.ProyectoPrepofesionalesApplication : No active profile set, falling back to 1 default profile: "default"
+2022-09-28 23:52:45.583  INFO 3576 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-28 23:52:45.583  INFO 3576 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-28 23:52:46.542  INFO 3576 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-28 23:52:46.703  INFO 3576 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152 ms. Found 28 JPA repository interfaces.
+2022-09-28 23:52:46.704  INFO 3576 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-28 23:52:46.713  INFO 3576 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+2022-09-28 23:52:47.895  INFO 3576 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-28 23:52:47.907  INFO 3576 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-28 23:52:47.908  INFO 3576 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-28 23:52:48.060  INFO 3576 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-28 23:52:48.060  INFO 3576 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2476 ms
+2022-09-28 23:52:48.283  INFO 3576 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: primaryPersistenceUnit]
+2022-09-28 23:52:48.331  INFO 3576 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-28 23:52:48.530  INFO 3576 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-28 23:52:48.680  INFO 3576 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-28 23:52:48.783  INFO 3576 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-28 23:52:48.801  INFO 3576 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-09-28 23:52:50.510  INFO 3576 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-28 23:52:50.517  INFO 3576 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'primaryPersistenceUnit'
+2022-09-28 23:52:50.538  INFO 3576 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: secondaryPersistenceUnit]
+2022-09-28 23:52:50.679  INFO 3576 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-09-28 23:52:50.712  INFO 3576 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-09-28 23:52:50.713  INFO 3576 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-09-28 23:52:50.839  INFO 3576 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-28 23:52:50.842  INFO 3576 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'secondaryPersistenceUnit'
+2022-09-28 23:52:52.584  WARN 3576 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-28 23:52:52.808  INFO 3576 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-09-28 23:52:53.679  INFO 3576 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-28 23:52:54.132  WARN 3576 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-09-28 23:52:54.306  INFO 3576 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-28 23:52:54.307  INFO 3576 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-09-28 23:52:54.382  INFO 3576 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-09-28 23:52:54.424  INFO 3576 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-09-28 23:52:54.629  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indextUsingGET_1
+2022-09-28 23:52:54.710  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: BuscarUsingGET_1
+2022-09-28 23:52:54.712  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: EliminarUsingDELETE_1
+2022-09-28 23:52:54.717  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: GuardarUsingPOST_1
+2022-09-28 23:52:54.720  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indextUsingGET_2
+2022-09-28 23:52:54.724  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indextUsingGET_3
+2022-09-28 23:52:54.746  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_1
+2022-09-28 23:52:54.747  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_1
+2022-09-28 23:52:54.753  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_1
+2022-09-28 23:52:54.772  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_1
+2022-09-28 23:52:54.828  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_2
+2022-09-28 23:52:54.830  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_2
+2022-09-28 23:52:54.834  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_2
+2022-09-28 23:52:54.836  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_2
+2022-09-28 23:52:54.843  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_3
+2022-09-28 23:52:54.845  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_3
+2022-09-28 23:52:54.848  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_3
+2022-09-28 23:52:54.850  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_3
+2022-09-28 23:52:54.856  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_4
+2022-09-28 23:52:54.858  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_4
+2022-09-28 23:52:54.860  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_4
+2022-09-28 23:52:54.863  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_4
+2022-09-28 23:52:54.871  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_5
+2022-09-28 23:52:54.873  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_5
+2022-09-28 23:52:54.876  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_5
+2022-09-28 23:52:54.879  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_5
+2022-09-28 23:52:54.920  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_6
+2022-09-28 23:52:54.937  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_6
+2022-09-28 23:52:54.961  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_6
+2022-09-28 23:52:54.974  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_6
+2022-09-28 23:52:54.980  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_7
+2022-09-28 23:52:54.982  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_7
+2022-09-28 23:52:54.984  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_7
+2022-09-28 23:52:54.986  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_7
+2022-09-28 23:52:55.014  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_8
+2022-09-28 23:52:55.015  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_8
+2022-09-28 23:52:55.017  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_8
+2022-09-28 23:52:55.018  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_8
+2022-09-28 23:52:55.024  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_9
+2022-09-28 23:52:55.026  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_9
+2022-09-28 23:52:55.028  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_9
+2022-09-28 23:52:55.030  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_9
+2022-09-28 23:52:55.036  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_10
+2022-09-28 23:52:55.049  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_10
+2022-09-28 23:52:55.065  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_10
+2022-09-28 23:52:55.080  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_10
+2022-09-28 23:52:55.124  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_11
+2022-09-28 23:52:55.126  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_11
+2022-09-28 23:52:55.129  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_11
+2022-09-28 23:52:55.130  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_11
+2022-09-28 23:52:55.137  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_12
+2022-09-28 23:52:55.138  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_12
+2022-09-28 23:52:55.140  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_12
+2022-09-28 23:52:55.142  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_12
+2022-09-28 23:52:55.148  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_13
+2022-09-28 23:52:55.152  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_13
+2022-09-28 23:52:55.153  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_13
+2022-09-28 23:52:55.161  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_14
+2022-09-28 23:52:55.163  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_13
+2022-09-28 23:52:55.165  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_14
+2022-09-28 23:52:55.167  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_14
+2022-09-28 23:52:55.172  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_15
+2022-09-28 23:52:55.173  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_14
+2022-09-28 23:52:55.175  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_15
+2022-09-28 23:52:55.177  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_15
+2022-09-28 23:52:55.275  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_16
+2022-09-28 23:52:55.277  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_15
+2022-09-28 23:52:55.279  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_16
+2022-09-28 23:52:55.282  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_16
+2022-09-28 23:52:55.290  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_17
+2022-09-28 23:52:55.292  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_16
+2022-09-28 23:52:55.294  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_17
+2022-09-28 23:52:55.296  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_17
+2022-09-28 23:52:55.302  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_18
+2022-09-28 23:52:55.304  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_17
+2022-09-28 23:52:55.306  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_18
+2022-09-28 23:52:55.322  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_18
+2022-09-28 23:52:55.379  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_19
+2022-09-28 23:52:55.381  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_18
+2022-09-28 23:52:55.386  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_19
+2022-09-28 23:52:55.388  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_19
+2022-09-28 23:52:55.395  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_20
+2022-09-28 23:52:55.397  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_19
+2022-09-28 23:52:55.398  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_20
+2022-09-28 23:52:55.400  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_20
+2022-09-28 23:52:55.407  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_21
+2022-09-28 23:52:55.408  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingDELETE_1
+2022-09-28 23:52:55.410  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_21
+2022-09-28 23:52:55.412  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_21
+2022-09-28 23:52:55.414  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUsingPUT_1
+2022-09-28 23:52:55.420  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_22
+2022-09-28 23:52:55.422  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_20
+2022-09-28 23:52:55.424  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_22
+2022-09-28 23:52:55.426  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_22
+2022-09-28 23:52:55.428  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: openapiJsonUsingGET_1
+2022-09-28 23:52:55.438  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: createUsingPOST_23
+2022-09-28 23:52:55.445  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUsingPUT_21
+2022-09-28 23:52:55.447  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_23
+2022-09-28 23:52:55.449  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_23
+2022-09-28 23:52:55.453  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_24
+2022-09-28 23:52:55.455  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: showUsingGET_24
+2022-09-28 23:52:55.461  INFO 3576 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_25
+2022-09-28 23:52:55.546  INFO 3576 --- [restartedMain] i.t.p.ProyectoPrepofesionalesApplication : Started ProyectoPrepofesionalesApplication in 10.733 seconds (JVM running for 11.806)
+2022-09-28 23:53:04.536  INFO 3576 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-09-28 23:53:04.559  INFO 3576 --- [RMI TCP Connection(7)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-09-28 23:53:04.657  INFO 3576 --- [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'secondaryPersistenceUnit'
+2022-09-28 23:53:04.657  INFO 3576 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-09-28 23:53:04.660  INFO 3576 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-09-28 23:53:04.660  INFO 3576 --- [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'primaryPersistenceUnit'
+2022-09-28 23:53:04.661  INFO 3576 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-28 23:53:04.663  INFO 3576 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
