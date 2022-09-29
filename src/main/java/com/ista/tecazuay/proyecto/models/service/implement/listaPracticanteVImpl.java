@@ -1,11 +1,13 @@
 package com.ista.tecazuay.proyecto.models.service.implement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ista.tecazuay.proyecto.models.primary.entity.RealizaPractica;
 import com.ista.tecazuay.proyecto.models.primary.entity.lista_practicantes_view;
 import com.ista.tecazuay.proyecto.models.repository.primary.dao.IListaPracticantesVDao;
 import com.ista.tecazuay.proyecto.models.service.IListaPracticanteVService;
@@ -21,6 +23,21 @@ public class listaPracticanteVImpl implements IListaPracticanteVService{
 	public List<lista_practicantes_view> findAll() {
 		// TODO Auto-generated method stub
 		return (List<lista_practicantes_view>)ilistaPracticantesV.findAll();
+	}
+
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<lista_practicantes_view> findbyconv(Long numconv) {
+		List<lista_practicantes_view> listarespuesta=new ArrayList<>();
+		List<lista_practicantes_view> listapracticas=(List<lista_practicantes_view>) ilistaPracticantesV.findAll();
+		for (int i = 0; i < listapracticas.size(); i++) {
+			if(listapracticas.get(i).getNumconvenio()==numconv) {
+				listarespuesta.add(listapracticas.get(i));
+			}
+		}
+		
+		return listarespuesta;
 	}
 	
 	
