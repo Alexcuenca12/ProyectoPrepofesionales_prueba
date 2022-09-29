@@ -1,5 +1,6 @@
 package com.ista.tecazuay.proyecto.models.service.implement.anexos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,14 +8,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.tecazuay.proyecto.models.primary.entity.anexos.A1_PlanRotacion;
+import com.ista.tecazuay.proyecto.models.primary.entity.anexos.Anexo1;
 import com.ista.tecazuay.proyecto.models.repository.primary.dao.anexos.IA1_PlanRotacionDao;
 import com.ista.tecazuay.proyecto.models.service.anexos.IA1_PlanRotacionService;
+
 @Service
-public class A1_PlanRotacionServiceImpl implements IA1_PlanRotacionService{
-	
+public class A1_PlanRotacionServiceImpl implements IA1_PlanRotacionService {
+
 	@Autowired
 	private IA1_PlanRotacionDao planRotacionDao;
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public List<A1_PlanRotacion> findAll() {
@@ -41,6 +44,22 @@ public class A1_PlanRotacionServiceImpl implements IA1_PlanRotacionService{
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		planRotacionDao.deleteById(id);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<A1_PlanRotacion> findbyanexo(Long idanexo) {
+		// TODO Auto-generated method stub
+		List<A1_PlanRotacion> planrotacionrespuesta = new ArrayList<>();
+		List<A1_PlanRotacion> planrotacion = (List<A1_PlanRotacion>) planRotacionDao.findAll();
+		for (int i = 0; i < planrotacion.size(); i++) {
+			if (planrotacion.get(i).getIdanexo1() == idanexo) {
+				planrotacionrespuesta.add(planrotacion.get(i));
+			}
+		}
+
+		return planrotacionrespuesta;
+
 	}
 
 }

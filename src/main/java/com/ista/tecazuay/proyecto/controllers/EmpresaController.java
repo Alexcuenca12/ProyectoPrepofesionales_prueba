@@ -50,16 +50,20 @@ public class EmpresaController {
 
 	// EDITAR
 	@PutMapping("/EditEmpresa/{id}")
-	/*@ResponseStatus(HttpStatus.CREATED)
+	@ResponseStatus(HttpStatus.CREATED)
 	public Empresa update(@RequestBody Empresa empresa, @PathVariable Long id) {
 
 		Empresa EmpresaActual = EmpresaService.findById(id);
-		EmpresaActual.setApellido(empresa.getApellido());
-		EmpresaActual.setNombre(empresa.getNombre());
-		EmpresaActual.setEmail(empresa.getEmail());
+		EmpresaActual.setCorreo(empresa.getCorreo());
+		EmpresaActual.setNombre_emp(empresa.getNombre_emp());
+		EmpresaActual.setCiudad(empresa.getCiudad());
+		EmpresaActual.setTelefono(empresa.getTelefono());
+		EmpresaActual.setDireccion(empresa.getDireccion());
+		EmpresaActual.setCodigo_postal(empresa.getCodigo_postal());
+		EmpresaActual.setDescripcion(empresa.getDescripcion());
 
 		return EmpresaService.save(EmpresaActual);
-	}*/
+	}
 
 	// ELIMINAR
 	@DeleteMapping("/DeleteEmpresa/{id}")

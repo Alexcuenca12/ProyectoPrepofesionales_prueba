@@ -9,7 +9,7 @@ import lombok.*;
 
 @Entity
 @Data
-@Table(name = "personas_ista")
+@Table(name = "vpersonas_ista")
 @NoArgsConstructor
 @AllArgsConstructor
 public class verpersonaf {

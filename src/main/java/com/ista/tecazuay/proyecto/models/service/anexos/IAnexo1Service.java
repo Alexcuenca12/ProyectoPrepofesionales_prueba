@@ -7,6 +7,7 @@ import com.ista.tecazuay.proyecto.models.primary.entity.anexos.Anexo1;
 public interface IAnexo1Service {
 
 	public List<Anexo1> findAll();
+	public List<Anexo1> findbyrealprac(Long id_realiza_practica);
 
 	public Anexo1 save(Anexo1 anexo1);
 
