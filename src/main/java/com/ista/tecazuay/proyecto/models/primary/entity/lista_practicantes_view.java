@@ -3,6 +3,8 @@ package com.ista.tecazuay.proyecto.models.primary.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.lang.Nullable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +19,7 @@ public class lista_practicantes_view {
 	private int idrealizando;
 	private int idpractica;
 	private int idpracticante;
+	@Nullable
 	private int idanexo;
 	private int idpersona;
 	private String apellidouno;
