@@ -8,6 +8,7 @@ import org.springframework.lang.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.bytebuddy.utility.nullability.MaybeNull;
 
 @Entity
 @Data
@@ -19,7 +20,7 @@ public class lista_practicantes_view {
 	private int idrealizando;
 	private int idpractica;
 	private int idpracticante;
-	@Nullable
+	@MaybeNull
 	private int idanexo;
 	private int idpersona;
 	private String apellidouno;
