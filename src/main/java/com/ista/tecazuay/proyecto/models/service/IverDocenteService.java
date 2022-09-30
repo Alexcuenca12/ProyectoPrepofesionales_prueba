@@ -1,7 +1,8 @@
-package com.ista.tecazuay.proyecto.models.secondary.service;
+package com.ista.tecazuay.proyecto.models.service;
 
 import java.util.List;
-import com.ista.tecazuay.proyecto.models.secondary.entity.verDocentes;
+
+import com.ista.tecazuay.proyecto.models.primary.entity.verDocentes;
 
 public interface IverDocenteService {
 	

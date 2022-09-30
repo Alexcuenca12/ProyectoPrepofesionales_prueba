@@ -1,6 +1,5 @@
-package com.ista.tecazuay.proyecto.models.secondary.entity;
+package com.ista.tecazuay.proyecto.models.primary.entity;
 
-import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,9 +15,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class verDocentes implements Serializable {
+public class verDocentes {
 	
-	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id_persona;
