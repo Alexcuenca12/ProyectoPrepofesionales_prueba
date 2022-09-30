@@ -20,7 +20,7 @@ public class viewDocentesRestController {
 	@Autowired
 	 private IviewDocentesService docentesService;
 	 
-	 @GetMapping("/listDocente")
+	 @GetMapping("/listvDocente")
 		public List<viewDocentes> index() {
 			// TODO Auto-generated method stub
 			return docentesService.findAll();

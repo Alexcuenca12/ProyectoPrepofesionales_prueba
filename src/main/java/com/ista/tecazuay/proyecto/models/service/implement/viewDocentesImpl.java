@@ -17,6 +17,7 @@ public class viewDocentesImpl implements IviewDocentesService{
 	@Autowired
 	private IviewDocentesDao viewDocentesDao;
 
+	@Override
 	public List<viewDocentes> findAll() {
 		// TODO Auto-generated method stub
 		return (List<viewDocentes>)viewDocentesDao.findAll();

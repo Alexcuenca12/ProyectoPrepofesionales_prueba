@@ -1,6 +1,7 @@
 package com.ista.tecazuay.proyecto.models.primary.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -9,11 +10,11 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "list_practicantes_view_m")
+@Table(name = "verdocente")
 @NoArgsConstructor
 @AllArgsConstructor
 public class viewDocentes {
-
+	@Id
 	private String persona_identificacion;
 	private String persona_primer_nombre;
 	private String persona_primer_apellido;
