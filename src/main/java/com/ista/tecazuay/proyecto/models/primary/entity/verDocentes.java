@@ -13,17 +13,18 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@Table(name="verdocentei")
 @NoArgsConstructor
 @AllArgsConstructor
 public class verDocentes {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id_persona;
 	private Long id_docente;
-	private String cedula;
-	private String doc_nombres;
-	private String doc_abreviatura;
-	private String doc_titulo;
+	private String persona_identificacion;
+	private String persona_primer_nombre;
+	private String persona_primer_apellido;
+	private String docente_abreviatura;
+	private String docente_titulo;
 	
 }
