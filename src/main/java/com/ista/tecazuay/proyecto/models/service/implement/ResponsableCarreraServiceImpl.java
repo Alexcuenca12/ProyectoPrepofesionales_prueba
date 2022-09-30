@@ -6,33 +6,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ista.tecazuay.proyecto.models.primary.entity.Representante;
-import com.ista.tecazuay.proyecto.models.repository.primary.dao.IRepresentanteDao;
-import com.ista.tecazuay.proyecto.models.service.IRepresentanteService;
+import com.ista.tecazuay.proyecto.models.primary.entity.ResponsableCarrera;
+import com.ista.tecazuay.proyecto.models.repository.primary.dao.IResponsableCarreraDao;
+import com.ista.tecazuay.proyecto.models.service.IResponsableCarreraService;
 
 @Service
-public class RepresentanteServiceImpl implements IRepresentanteService {
+public class ResponsableCarreraServiceImpl implements IResponsableCarreraService {
 
 	@Autowired
-	private IRepresentanteDao RepresentanteDao;
+	private IResponsableCarreraDao RepresentanteDao;
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Representante> findAll() {
+	public List<ResponsableCarrera> findAll() {
 
-		return (List<Representante>) RepresentanteDao.findAll();
+		return (List<ResponsableCarrera>) RepresentanteDao.findAll();
 	}
 
 	@Override
 	@Transactional
-	public Representante save(Representante representante) {
+	public ResponsableCarrera save(ResponsableCarrera representante) {
 
 		return RepresentanteDao.save(representante);
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Representante findById(Long id) {
+	public ResponsableCarrera findById(Long id) {
 
 		return RepresentanteDao.findById(id).orElse(null);
 	}
