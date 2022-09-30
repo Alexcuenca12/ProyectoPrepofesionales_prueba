@@ -21,22 +21,25 @@ public class Practicas implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_practicas;
-	private String lugar;
-	private Double calificacion;
-	@Column(name = "horas_totales")
+	private String lugar;//?
+	private Double calificacion;//?
+	@Column(name = "horas_totales")//?
 	@Temporal(TemporalType.TIME)
-	private Date horas_totales;
-	@Column(name = "fecha_inicio")
+	private Date horas_totales;//?
+	@Column(name = "fecha_inicio")//?
 	@Temporal(TemporalType.DATE)
-	private Date fecha_inicio;
-	@Column(name = "fecha_fin")
+	private Date fecha_inicio;//?
+	@Column(name = "fecha_fin")//?
 	@Temporal(TemporalType.DATE)
-	private Date fecha_fin;
-	private Long id_empresa;
-	private Long id_docente_tutor;
-	private Long id_representante_empresa;
-	private Long id_convenio;
-
+	private Date fecha_fin;//?
+	private Long id_empresa;//No
+	private Long id_docente_tutor;//Si
+	private Long id_representante_empresa;//No Aqui va el ente_empresarial(Tutor Empresarial)
+	private Long id_convenio;//Si
+	//Falta:
+	//Descripcion de actividades
+	//Carrera
+	//Numero de estudiantes
 	public Long getId_practicas() {
 		return id_practicas;
 	}

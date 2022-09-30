@@ -39,6 +39,19 @@ public class listaPracticanteVImpl implements IListaPracticanteVService{
 		
 		return listarespuesta;
 	}
+	@Override
+	@Transactional(readOnly = true)
+	public List<lista_practicantes_view> findbyreal(Long idreal) {
+		List<lista_practicantes_view> listarespuesta=new ArrayList<>();
+		List<lista_practicantes_view> listarealiza=(List<lista_practicantes_view>) ilistaPracticantesV.findAll();
+		for (int i = 0; i < listarealiza.size(); i++) {
+			if(listarealiza.get(i).getIdrealizando()==idreal) {
+				listarespuesta.add(listarealiza.get(i));
+			}
+		}
+		
+		return listarespuesta;
+	}
 	
 	
 

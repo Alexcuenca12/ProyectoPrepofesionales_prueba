@@ -31,5 +31,11 @@ public class listPracticanteVRestController {
 		return iListaPracticanteVService.findbyconv(numconv);
 		
 	}
+	@GetMapping("/Listpractreal/{idreal}")
+	public List<lista_practicantes_view> findbyreal(@PathVariable Long idreal) {
+
+		return iListaPracticanteVService.findbyreal(idreal);
+		
+	}
 
 }
