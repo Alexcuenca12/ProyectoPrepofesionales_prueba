@@ -14,4 +14,6 @@ public interface IEmpresaService {
 
 	public void delete(Long id);
 	
+	public List<Empresa> findbyName(String name);
+	
 }
