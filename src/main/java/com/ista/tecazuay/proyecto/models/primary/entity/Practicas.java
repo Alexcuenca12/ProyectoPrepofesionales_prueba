@@ -19,7 +19,7 @@ public class Practicas implements Serializable {
 	private Long id_tutor_academico;
 	private Long id_tutor_empresarial;
 	private Long id_convenio;
-	private String lugar;// ?
+	private String lugar;
 	private String cantidad_horas;
 	private String fecha_inicio;
 	private String fecha_final;
