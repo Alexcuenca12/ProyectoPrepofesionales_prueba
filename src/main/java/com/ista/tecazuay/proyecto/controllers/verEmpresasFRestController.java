@@ -1,4 +1,4 @@
-package com.ista.tecazuay.proyecto.secondary.controllers;
+package com.ista.tecazuay.proyecto.controllers;
 
 import java.util.List;
 
@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ista.tecazuay.proyecto.models.primary.entity.lista_practicantes_view;
-import com.ista.tecazuay.proyecto.models.secondary.entity.verEmpresas;
-import com.ista.tecazuay.proyecto.models.secondary.service.IverEmpresaService;
+import com.ista.tecazuay.proyecto.models.primary.entity.verEmpresas;
+import com.ista.tecazuay.proyecto.models.service.IverEmpresaService;
+
 
 @CrossOrigin(origins = { "http://localhost:4200" })
 @RestController

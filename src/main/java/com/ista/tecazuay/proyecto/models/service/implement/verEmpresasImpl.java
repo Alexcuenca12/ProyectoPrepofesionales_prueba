@@ -1,4 +1,4 @@
-package com.ista.tecazuay.proyecto.models.secondary.service;
+package com.ista.tecazuay.proyecto.models.service.implement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ista.tecazuay.proyecto.models.repository.secondary.dao.IverEmpresasDao;
-import com.ista.tecazuay.proyecto.models.secondary.entity.verEmpresas;
+import com.ista.tecazuay.proyecto.models.primary.entity.verEmpresas;
+import com.ista.tecazuay.proyecto.models.repository.primary.dao.IverEmpresasDao;
+import com.ista.tecazuay.proyecto.models.service.IverEmpresaService;
 @Service
 public class verEmpresasImpl implements IverEmpresaService{
 	

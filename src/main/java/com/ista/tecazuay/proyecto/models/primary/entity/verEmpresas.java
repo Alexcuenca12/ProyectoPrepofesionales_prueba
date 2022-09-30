@@ -1,7 +1,9 @@
-package com.ista.tecazuay.proyecto.models.secondary.entity;
+package com.ista.tecazuay.proyecto.models.primary.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class verEmpresas {
 
 	@Id
