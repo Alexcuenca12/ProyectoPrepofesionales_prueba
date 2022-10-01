@@ -25,7 +25,7 @@ public class Practicas implements Serializable {
 	private String fecha_final;
 	private String carrera_solicitada;
 	private String cantidad_estudiantes;
-	private String descripcion;
+	private String actividades;
 
 	public Long getId_practicas() {
 		return id_practicas;
@@ -107,12 +107,14 @@ public class Practicas implements Serializable {
 		this.cantidad_estudiantes = cantidad_estudiantes;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public String getActividades() {
+		return actividades;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setActividades(String actividades) {
+		this.actividades = actividades;
 	}
+
+	
 
 }
