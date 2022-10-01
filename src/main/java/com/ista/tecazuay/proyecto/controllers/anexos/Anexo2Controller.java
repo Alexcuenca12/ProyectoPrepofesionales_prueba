@@ -15,6 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.google.gson.Gson;
+import com.ista.tecazuay.proyecto.files.FileUploadUtil;
 import com.ista.tecazuay.proyecto.models.primary.entity.anexos.Anexo2;
 import com.ista.tecazuay.proyecto.models.service.anexos.IAnexo2Service;
 
@@ -50,16 +58,17 @@ public class Anexo2Controller {
 
 	// EDITAR
 	@PutMapping("/EditAnexo2/{id}")
-	/*@ResponseStatus(HttpStatus.CREATED)
-	public Anexo2 update(@RequestBody Anexo2 anexo2, @PathVariable Long id) {
-
-		Anexo2 Anexo2Actual = Anexo2Service.findById(id);
-		Anexo2Actual.setApellido(anexo2.getApellido());
-		Anexo2Actual.setNombre(anexo2.getNombre());
-		Anexo2Actual.setEmail(anexo2.getEmail());
-
-		return Anexo2Service.save(Anexo2Actual);
-	}*/
+	/*
+	 * @ResponseStatus(HttpStatus.CREATED) public Anexo2 update(@RequestBody Anexo2
+	 * anexo2, @PathVariable Long id) {
+	 * 
+	 * Anexo2 Anexo2Actual = Anexo2Service.findById(id);
+	 * Anexo2Actual.setApellido(anexo2.getApellido());
+	 * Anexo2Actual.setNombre(anexo2.getNombre());
+	 * Anexo2Actual.setEmail(anexo2.getEmail());
+	 * 
+	 * return Anexo2Service.save(Anexo2Actual); }
+	 */
 
 	// ELIMINAR
 	@DeleteMapping("/DeleteAnexo2/{id}")

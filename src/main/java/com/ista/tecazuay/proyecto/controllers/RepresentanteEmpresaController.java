@@ -50,16 +50,19 @@ import com.ista.tecazuay.proyecto.models.service.IRepresentanteEmpresaService;
 
 		// EDITAR
 		@PutMapping("/EditRepresentanteEmpresa/{id}")
-		/*@ResponseStatus(HttpStatus.CREATED)
-		public Representante update(@RequestBody Representante representante, @PathVariable Long id) {
+		@ResponseStatus(HttpStatus.CREATED)
+		public RepresentanteEmpresa update(@RequestBody RepresentanteEmpresa representante, @PathVariable Long id) {
 
-			Representante RepresentanteActual = RepresentanteService.findById(id);
-			RepresentanteActual.setApellido(representante.getApellido());
-			RepresentanteActual.setNombre(representante.getNombre());
-			RepresentanteActual.setEmail(representante.getEmail());
-
-			return RepresentanteService.save(RepresentanteActual);
-		}*/
+			RepresentanteEmpresa RepresentanteActual = RepresentanteEmpresaService.findById(id);
+			RepresentanteActual.setNombrerep(representante.getNombrerep());
+			RepresentanteActual.setApellidorep(representante.getApellidorep());
+			RepresentanteActual.setCorreorep(representante.getCorreorep());
+			RepresentanteActual.setDireccionrep(representante.getDireccionrep());
+			RepresentanteActual.setCorreorep(representante.getCorreorep());
+			RepresentanteActual.setTelefonorep(representante.getTelefonorep());
+			RepresentanteActual.setIdempre(representante.getIdempre());
+			return RepresentanteEmpresaService.save(RepresentanteActual);
+		}
 
 		// ELIMINAR
 		@DeleteMapping("/DeleteRepresentanteEmpresa/{id}")

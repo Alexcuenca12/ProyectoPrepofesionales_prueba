@@ -8,9 +8,11 @@ public interface IDocenteTutorService {
 
 	public List<DocenteTutor> findAll();
 
+	DocenteTutor findByIdentificaion(String identificacion);
+
 	public DocenteTutor save(DocenteTutor tutor);
 
-	public DocenteTutor findById(Long id);
+	public DocenteTutor findById(String id);
 
-	public void delete(Long id);
+	public void delete(String id);
 }

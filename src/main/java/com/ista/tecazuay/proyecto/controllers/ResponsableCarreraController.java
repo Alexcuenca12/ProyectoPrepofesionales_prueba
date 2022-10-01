@@ -15,27 +15,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ista.tecazuay.proyecto.models.primary.entity.Representante;
-import com.ista.tecazuay.proyecto.models.service.IRepresentanteService;
+import com.ista.tecazuay.proyecto.models.primary.entity.ResponsableCarrera;
+import com.ista.tecazuay.proyecto.models.service.IResponsableCarreraService;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600, allowCredentials="true")
 @RestController
 @RequestMapping("/api")
-public class RepresentantesController {
+public class ResponsableCarreraController {
 
 	@Autowired
-	private IRepresentanteService RepresentanteService;
+	private IResponsableCarreraService RepresentanteService;
 
 	// LISTAR
 	@GetMapping("/ListRepresentante")
-	public List<Representante> index() {
+	public List<ResponsableCarrera> index() {
 
 		return RepresentanteService.findAll();
 	}
 
 	// BUSCAR
 	@GetMapping("/SearchRepresentante/{id}")
-	public Representante show(@PathVariable Long id) {
+	public ResponsableCarrera show(@PathVariable Long id) {
 
 		return RepresentanteService.findById(id);
 	}
@@ -43,7 +43,7 @@ public class RepresentantesController {
 	// GUARDAR
 	@PostMapping("/SaveRepresentante")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Representante create(@RequestBody Representante representante) {
+	public ResponsableCarrera create(@RequestBody ResponsableCarrera representante) {
 
 		return RepresentanteService.save(representante);
 	}
@@ -51,9 +51,9 @@ public class RepresentantesController {
 	// EDITAR
 	@PutMapping("/EditRepresentante/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Representante update(@RequestBody Representante representante, @PathVariable Long id) {
+	public ResponsableCarrera update(@RequestBody ResponsableCarrera representante, @PathVariable Long id) {
 
-		Representante RepresentanteActual = RepresentanteService.findById(id);
+		ResponsableCarrera RepresentanteActual = RepresentanteService.findById(id);
 		RepresentanteActual.setNombre(representante.getNombre());
 		RepresentanteActual.setApellido(representante.getApellido());
 		RepresentanteActual.setCorreo(representante.getCorreo());

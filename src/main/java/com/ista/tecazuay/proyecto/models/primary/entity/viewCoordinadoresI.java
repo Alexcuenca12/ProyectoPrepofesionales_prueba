@@ -1,5 +1,6 @@
 package com.ista.tecazuay.proyecto.models.primary.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -16,7 +17,8 @@ import lombok.NoArgsConstructor;
 public class viewCoordinadoresI {
 
 	@Id
-	private String persona_identificacion;
+	@Column(name = "cedula", nullable = false, updatable = false)
+	private String cedula;
 	private String per_primerapellido;
 	private String per_segundoapellido;
 	private String per_primernombre;

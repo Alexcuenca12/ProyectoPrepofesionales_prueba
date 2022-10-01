@@ -1,16 +1,11 @@
 package com.ista.tecazuay.proyecto.models.primary.entity;
 
 import java.io.Serializable;
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "practicas")
@@ -21,21 +16,16 @@ public class Practicas implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_practicas;
-	private String lugar;
-	private Double calificacion;
-	@Column(name = "horas_totales")
-	@Temporal(TemporalType.TIME)
-	private Date horas_totales;
-	@Column(name = "fecha_inicio")
-	@Temporal(TemporalType.DATE)
-	private Date fecha_inicio;
-	@Column(name = "fecha_fin")
-	@Temporal(TemporalType.DATE)
-	private Date fecha_fin;
-	private Long id_empresa;
-	private Long id_docente_tutor;
-	private Long id_representante_empresa;
+	private Long id_tutor_academico;
+	private Long id_tutor_empresarial;
 	private Long id_convenio;
+	private String lugar;
+	private String cantidad_horas;
+	private String fecha_inicio;
+	private String fecha_final;
+	private String carrera_solicitada;
+	private String cantidad_estudiantes;
+	private String descripcion;
 
 	public Long getId_practicas() {
 		return id_practicas;
@@ -43,6 +33,30 @@ public class Practicas implements Serializable {
 
 	public void setId_practicas(Long id_practicas) {
 		this.id_practicas = id_practicas;
+	}
+
+	public Long getId_tutor_academico() {
+		return id_tutor_academico;
+	}
+
+	public void setId_tutor_academico(Long id_tutor_academico) {
+		this.id_tutor_academico = id_tutor_academico;
+	}
+
+	public Long getId_tutor_empresarial() {
+		return id_tutor_empresarial;
+	}
+
+	public void setId_tutor_empresarial(Long id_tutor_empresarial) {
+		this.id_tutor_empresarial = id_tutor_empresarial;
+	}
+
+	public Long getId_convenio() {
+		return id_convenio;
+	}
+
+	public void setId_convenio(Long id_convenio) {
+		this.id_convenio = id_convenio;
 	}
 
 	public String getLugar() {
@@ -53,68 +67,52 @@ public class Practicas implements Serializable {
 		this.lugar = lugar;
 	}
 
-	public Double getCalificacion() {
-		return calificacion;
+	public String getCantidad_horas() {
+		return cantidad_horas;
 	}
 
-	public void setCalificacion(Double calificacion) {
-		this.calificacion = calificacion;
+	public void setCantidad_horas(String cantidad_horas) {
+		this.cantidad_horas = cantidad_horas;
 	}
 
-	public Date getHoras_totales() {
-		return horas_totales;
-	}
-
-	public void setHoras_totales(Date horas_totales) {
-		this.horas_totales = horas_totales;
-	}
-
-	public Date getFecha_inicio() {
+	public String getFecha_inicio() {
 		return fecha_inicio;
 	}
 
-	public void setFecha_inicio(Date fecha_inicio) {
+	public void setFecha_inicio(String fecha_inicio) {
 		this.fecha_inicio = fecha_inicio;
 	}
 
-	public Date getFecha_fin() {
-		return fecha_fin;
+	public String getFecha_final() {
+		return fecha_final;
 	}
 
-	public void setFecha_fin(Date fecha_fin) {
-		this.fecha_fin = fecha_fin;
+	public void setFecha_final(String fecha_final) {
+		this.fecha_final = fecha_final;
 	}
 
-	public Long getId_empresa() {
-		return id_empresa;
+	public String getCarrera_solicitada() {
+		return carrera_solicitada;
 	}
 
-	public void setId_empresa(Long id_empresa) {
-		this.id_empresa = id_empresa;
+	public void setCarrera_solicitada(String carrera_solicitada) {
+		this.carrera_solicitada = carrera_solicitada;
 	}
 
-	public Long getId_docente_tutor() {
-		return id_docente_tutor;
+	public String getCantidad_estudiantes() {
+		return cantidad_estudiantes;
 	}
 
-	public void setId_docente_tutor(Long id_docente_tutor) {
-		this.id_docente_tutor = id_docente_tutor;
+	public void setCantidad_estudiantes(String cantidad_estudiantes) {
+		this.cantidad_estudiantes = cantidad_estudiantes;
 	}
 
-	public Long getId_representante_empresa() {
-		return id_representante_empresa;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setId_representante_empresa(Long id_representante_empresa) {
-		this.id_representante_empresa = id_representante_empresa;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
-	public Long getId_convenio() {
-		return id_convenio;
-	}
-
-	public void setId_convenio(Long id_convenio) {
-		this.id_convenio = id_convenio;
-	}
-	
 }
