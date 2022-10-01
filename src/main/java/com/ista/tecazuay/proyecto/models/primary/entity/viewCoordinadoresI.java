@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "verdocente")
+@Table(name = "viewcoordinadoresi")
 @NoArgsConstructor
 @AllArgsConstructor
 public class viewCoordinadoresI {
