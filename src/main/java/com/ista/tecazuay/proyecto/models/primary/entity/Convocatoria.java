@@ -31,24 +31,13 @@ public class Convocatoria implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_convocatoria;
 	private Long id_practicas;
-	private Long id_convenio;
-	private String nombreEmpresa;
-	private Long id_tutorEmpresarial;
-	private Long id_tutorAcademico;
-	private String lugar;
-	@Column(name = "fecha_inicio")
+	@Column(name = "fecha_recepcion")
 	@Temporal(TemporalType.DATE)
-	private Date fecha_inicio;
-	@Column(name = "fecha_final")
-	@Temporal(TemporalType.DATE)
-	private Date fecha_final;
+	private Date fecha_recepcion;
 	@Column(name = "fecha_envio")
 	@Temporal(TemporalType.DATE)
 	private Date fecha_envio;
-	private String carrera_Solicitada;
-	private int cantidadEstudiantes;
-	private String listadoMAterias;
-	private String actividades;
+	private String listadoMaterias;
 	private int ciclo;
 	private String nombreResponsable;
 	
