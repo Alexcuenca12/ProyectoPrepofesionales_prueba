@@ -35,7 +35,7 @@ public class ResponsableCarreraController {
 
 	// BUSCAR
 	@GetMapping("/SearchRepresentante/{id}")
-	public ResponsableCarrera show(@PathVariable Long id) {
+	public ResponsableCarrera show(@PathVariable String id) {
 
 		return RepresentanteService.findById(id);
 	}
@@ -51,7 +51,7 @@ public class ResponsableCarreraController {
 	// EDITAR
 	@PutMapping("/EditRepresentante/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponsableCarrera update(@RequestBody ResponsableCarrera representante, @PathVariable Long id) {
+	public ResponsableCarrera update(@RequestBody ResponsableCarrera representante, @PathVariable String id) {
 
 		ResponsableCarrera RepresentanteActual = RepresentanteService.findById(id);
 		RepresentanteActual.setNombre(representante.getNombre());
@@ -66,7 +66,7 @@ public class ResponsableCarreraController {
 	// ELIMINAR
 	@DeleteMapping("/DeleteRepresentante/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
+	public void delete(@PathVariable String id) {
 
 		RepresentanteService.delete(id);
 	}

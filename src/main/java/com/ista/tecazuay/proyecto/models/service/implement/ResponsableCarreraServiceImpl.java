@@ -24,6 +24,13 @@ public class ResponsableCarreraServiceImpl implements IResponsableCarreraService
 	}
 
 	@Override
+	@Transactional(readOnly = true)
+	public ResponsableCarrera findByIdentificaion(String identificacion) {
+
+		return RepresentanteDao.findById(identificacion).orElse(null);
+	}
+	
+	@Override
 	@Transactional
 	public ResponsableCarrera save(ResponsableCarrera representante) {
 
@@ -32,15 +39,16 @@ public class ResponsableCarreraServiceImpl implements IResponsableCarreraService
 
 	@Override
 	@Transactional(readOnly = true)
-	public ResponsableCarrera findById(Long id) {
+	public ResponsableCarrera findById(String id) {
 
 		return RepresentanteDao.findById(id).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public void delete(Long id) {
+	public void delete(String id) {
 
 		RepresentanteDao.deleteById(id);
 	}
+
 }

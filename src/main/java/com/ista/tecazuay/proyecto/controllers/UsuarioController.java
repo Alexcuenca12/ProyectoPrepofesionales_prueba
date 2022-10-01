@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ista.tecazuay.proyecto.models.primary.entity.Rol;
 import com.ista.tecazuay.proyecto.models.primary.entity.Usuario;
 import com.ista.tecazuay.proyecto.models.primary.entity.UsuarioRol;
+import com.ista.tecazuay.proyecto.models.repository.primary.dao.IDocenteTutorDao;
+import com.ista.tecazuay.proyecto.models.repository.primary.dao.IRepresentanteEmpresaDao;
+import com.ista.tecazuay.proyecto.models.repository.primary.dao.IResponsableCarreraDao;
 import com.ista.tecazuay.proyecto.models.repository.primary.dao.IUsuariosRepositoryDao;
-import com.ista.tecazuay.proyecto.models.repository.primary.dao.IverDocenteDao;
 import com.ista.tecazuay.proyecto.models.repository.primary.dao.IviewAlumnosDao;
 import com.ista.tecazuay.proyecto.models.repository.primary.dao.IviewCoordinadoresDao;
 import com.ista.tecazuay.proyecto.models.repository.secondary.dao.IVerpersonafDao;
@@ -35,7 +37,13 @@ public class UsuarioController {
 	IVerpersonafDao personaFenix;
 
 	@Autowired
-	IverDocenteDao docenteFenix;
+	IDocenteTutorDao docenteTutor;
+
+	@Autowired
+	IRepresentanteEmpresaDao repreEmpresa;
+
+	@Autowired
+	IResponsableCarreraDao responCarrera;
 
 	@Autowired
 	IviewCoordinadoresDao coordinadorFenix;
@@ -80,10 +88,34 @@ public class UsuarioController {
 				// SE COMPRUEBA QUE NO SE REGISTRE UN CORREO PREVIAMENTE REGISTRADO..
 				if (!userRepository.existsByCorreo(usuario.getCorreo())) {
 
-					// COMPROBAR SI LA CEDULA INGRESADA PERTENENCE A UN COORDINADOR
-					if (coordinadorFenix.existsByCedula(usuario.getCedula())) {
+					// COMPROBAR SI LA CEDULA INGRESADA PERTENENCE A UN DOCENTE TUTOR
+					if (docenteTutor.existsByCedula(usuario.getCedula())) {
 
 						rol.setRolId(1L);
+						rol.setRolNombre("DOCENTE TUTOR");
+						UsuarioRol usuarioRol = new UsuarioRol();
+						usuarioRol.setUsuario(usuario);
+						usuarioRol.setRol(rol);
+
+						userRoles.add(usuarioRol);
+						return UsuarioService.save(usuario, userRoles);
+
+						// COMPROBAR SI LA CEDULA INGRESADA PERTENENCE A UN COORDINADOR
+					} else if (responCarrera.existsByCedula(usuario.getCedula())) {
+
+						rol.setRolId(2L);
+						rol.setRolNombre("RESPONSABLE DE PRACTICAS");
+						UsuarioRol usuarioRol = new UsuarioRol();
+						usuarioRol.setUsuario(usuario);
+						usuarioRol.setRol(rol);
+
+						userRoles.add(usuarioRol);
+						return UsuarioService.save(usuario, userRoles);
+
+						// COMPROBAR SI LA CEDULA INGRESADA PERTENENCE A UN COORDINADOR
+					} else if (coordinadorFenix.existsByCedula(usuario.getCedula())) {
+
+						rol.setRolId(3L);
 						rol.setRolNombre("COORDINADOR");
 						UsuarioRol usuarioRol = new UsuarioRol();
 						usuarioRol.setUsuario(usuario);
@@ -95,7 +127,7 @@ public class UsuarioController {
 						// COMPROBAR SI LA CEDULA INGRESADA PERTENENCE A UN DOCENTE
 					} else if (alumnoFenix.existsByCedula(usuario.getCedula())) {
 
-						rol.setRolId(2L);
+						rol.setRolId(4L);
 						rol.setRolNombre("ESTUDIANTE");
 						UsuarioRol usuarioRol = new UsuarioRol();
 						usuarioRol.setUsuario(usuario);
@@ -115,9 +147,19 @@ public class UsuarioController {
 					throw new Exception("Error: Usted no puede ingresar un correo existente!");
 				}
 
+			} else if (repreEmpresa.existsByCedula(usuario.getCedula())) {
+
+				rol.setRolId(5L);
+				rol.setRolNombre("RESPONSABLE EMPRESA");
+				UsuarioRol usuarioRol = new UsuarioRol();
+				usuarioRol.setUsuario(usuario);
+				usuarioRol.setRol(rol);
+
+				userRoles.add(usuarioRol);
+				return UsuarioService.save(usuario, userRoles);
 			} else {
 
-				throw new Exception("Error: El usuario no esta en FENIX!");
+				throw new Exception("Error: El usuario no se encuentra registrado!");
 			}
 
 		} else {

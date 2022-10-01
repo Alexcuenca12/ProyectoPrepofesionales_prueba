@@ -8,9 +8,11 @@ public interface IResponsableCarreraService {
 
 	public List<ResponsableCarrera> findAll();
 
+	ResponsableCarrera findByIdentificaion(String identificacion);
+
 	public ResponsableCarrera save(ResponsableCarrera representante);
 
-	public ResponsableCarrera findById(Long id);
+	public ResponsableCarrera findById(String id);
 
-	public void delete(Long id);
+	public void delete(String id);
 }

@@ -9,11 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ista.tecazuay.proyecto.models.primary.entity.RepresentanteEmpresa;
 import com.ista.tecazuay.proyecto.models.repository.primary.dao.IRepresentanteEmpresaDao;
 import com.ista.tecazuay.proyecto.models.service.IRepresentanteEmpresaService;
+
 @Service
 
 public class RepresentanteEmpresaServiceImpl implements IRepresentanteEmpresaService {
 
-	
 	@Autowired
 	private IRepresentanteEmpresaDao RepresentanteEmpresaDao;
 
@@ -25,6 +25,13 @@ public class RepresentanteEmpresaServiceImpl implements IRepresentanteEmpresaSer
 	}
 
 	@Override
+	@Transactional(readOnly = true)
+	public RepresentanteEmpresa findByIdentificaion(String identificacion) {
+
+		return RepresentanteEmpresaDao.findById(identificacion).orElse(null);
+	}
+
+	@Override
 	@Transactional
 	public RepresentanteEmpresa save(RepresentanteEmpresa representanteempresa) {
 
@@ -33,17 +40,16 @@ public class RepresentanteEmpresaServiceImpl implements IRepresentanteEmpresaSer
 
 	@Override
 	@Transactional(readOnly = true)
-	public RepresentanteEmpresa findById(Long id) {
+	public RepresentanteEmpresa findById(String cedula) {
 
-		return RepresentanteEmpresaDao.findById(id).orElse(null);
+		return RepresentanteEmpresaDao.findById(cedula).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public void delete(Long id) {
+	public void delete(String cedula) {
 
-		RepresentanteEmpresaDao.deleteById(id);
+		RepresentanteEmpresaDao.deleteById(cedula);
 	}
-}
-	
 
+}

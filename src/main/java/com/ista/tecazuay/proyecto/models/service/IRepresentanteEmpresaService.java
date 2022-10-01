@@ -8,9 +8,11 @@ public interface IRepresentanteEmpresaService {
 
 	public List<RepresentanteEmpresa> findAll();
 
+	RepresentanteEmpresa findByIdentificaion(String identificacion);
+
 	public RepresentanteEmpresa save(RepresentanteEmpresa representanteempresa);
 
-	public RepresentanteEmpresa findById(Long id);
+	public RepresentanteEmpresa findById(String id);
 
-	public void delete(Long id);
+	public void delete(String id);
 }

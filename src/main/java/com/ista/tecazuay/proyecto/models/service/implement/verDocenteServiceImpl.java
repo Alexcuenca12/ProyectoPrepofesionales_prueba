@@ -12,25 +12,22 @@ import com.ista.tecazuay.proyecto.models.service.IverDocenteService;
 
 @Service
 public class verDocenteServiceImpl implements IverDocenteService {
-	
+
 	@Autowired
 	private IverDocenteDao docenteDao;
-	
+
 	@Override
-	@Transactional (readOnly=true)
+	@Transactional(readOnly = true)
 	public List<verDocentes> findAll() {
-		// TODO Auto-generated method stub
-		return (List<verDocentes>)docenteDao.findAll();
+
+		return (List<verDocentes>) docenteDao.findAll();
 	}
 
 	@Override
-	@Transactional (readOnly=true)
+	@Transactional(readOnly = true)
 	public verDocentes findById(Long id_persona) {
-		// TODO Auto-generated method stub
+
 		return docenteDao.findById(id_persona).orElse(null);
 	}
-
-	
-
 
 }

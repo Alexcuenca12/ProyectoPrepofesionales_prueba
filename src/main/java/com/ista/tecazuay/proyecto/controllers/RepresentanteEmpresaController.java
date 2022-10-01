@@ -34,10 +34,10 @@ import com.ista.tecazuay.proyecto.models.service.IRepresentanteEmpresaService;
 		}
 
 		// BUSCAR
-		@GetMapping("/SearchRepresentanteEmpresa/{id}")
-		public RepresentanteEmpresa show(@PathVariable Long id) {
+		@GetMapping("/SearchRepresentanteEmpresa/{cedula}")
+		public RepresentanteEmpresa show(@PathVariable String cedula) {
 
-			return RepresentanteEmpresaService.findById(id);
+			return RepresentanteEmpresaService.findById(cedula);
 		}
 
 		// GUARDAR
@@ -49,11 +49,11 @@ import com.ista.tecazuay.proyecto.models.service.IRepresentanteEmpresaService;
 		}
 
 		// EDITAR
-		@PutMapping("/EditRepresentanteEmpresa/{id}")
+		@PutMapping("/EditRepresentanteEmpresa/{cedula}")
 		@ResponseStatus(HttpStatus.CREATED)
-		public RepresentanteEmpresa update(@RequestBody RepresentanteEmpresa representante, @PathVariable Long id) {
+		public RepresentanteEmpresa update(@RequestBody RepresentanteEmpresa representante, @PathVariable String cedula) {
 
-			RepresentanteEmpresa RepresentanteActual = RepresentanteEmpresaService.findById(id);
+			RepresentanteEmpresa RepresentanteActual = RepresentanteEmpresaService.findById(cedula);
 			RepresentanteActual.setNombrerep(representante.getNombrerep());
 			RepresentanteActual.setApellidorep(representante.getApellidorep());
 			RepresentanteActual.setCorreorep(representante.getCorreorep());
@@ -65,11 +65,11 @@ import com.ista.tecazuay.proyecto.models.service.IRepresentanteEmpresaService;
 		}
 
 		// ELIMINAR
-		@DeleteMapping("/DeleteRepresentanteEmpresa/{id}")
+		@DeleteMapping("/DeleteRepresentanteEmpresa/{cedula}")
 		@ResponseStatus(HttpStatus.NO_CONTENT)
-		public void delete(@PathVariable Long id) {
+		public void delete(@PathVariable String cedula) {
 
-			RepresentanteEmpresaService.delete(id);
+			RepresentanteEmpresaService.delete(cedula);
 		}
 	}
 	
