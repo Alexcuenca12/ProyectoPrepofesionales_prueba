@@ -21,6 +21,8 @@ public class RepresentanteEmpresa {
 	private String correorep;
 	private String direccionrep;
 	private String telefonorep;
+	private Long idempre;
+	
 	public Long getId_representante() {
 		return id_representante;
 	}
@@ -57,10 +59,11 @@ public class RepresentanteEmpresa {
 	public void setTelefonorep(String telefonorep) {
 		this.telefonorep = telefonorep;
 	}
-	
-	
-	
-	
-	
+	public Long getIdempre() {
+		return idempre;
+	}
+	public void setIdempre(Long idempre) {
+		this.idempre = idempre;
+	}	
 	
 }
