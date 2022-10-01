@@ -4,6 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.ista.tecazuay.proyecto.models.primary.entity.viewCoordinadoresI;
 
-public interface IviewCoordinadoresIDao extends CrudRepository<viewCoordinadoresI, String>{
+public interface IviewCoordinadoresDao extends CrudRepository<viewCoordinadoresI, String>{
 
+	Boolean existsByCedula(String cedula);
 }

@@ -24,6 +24,13 @@ public class DocenteTutorServiceImpl implements IDocenteTutorService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
+	public DocenteTutor findByIdentificaion(String cedula) {
+		return DocenteTutorDao.findById(cedula).orElse(null);
+
+	}
+
+	@Override
 	@Transactional
 	public DocenteTutor save(DocenteTutor tutor) {
 
@@ -32,15 +39,16 @@ public class DocenteTutorServiceImpl implements IDocenteTutorService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public DocenteTutor findById(Long id) {
+	public DocenteTutor findById(String id) {
 
 		return DocenteTutorDao.findById(id).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public void delete(Long id) {
+	public void delete(String id) {
 
 		DocenteTutorDao.deleteById(id);
 	}
+
 }

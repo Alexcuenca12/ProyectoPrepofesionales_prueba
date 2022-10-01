@@ -5,10 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name="roles")
+@Table(name = "roles")
 @Setter
 @Getter
 @NoArgsConstructor
@@ -16,9 +19,10 @@ import javax.persistence.*;
 public class Rol {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id_rol;
-	@Enumerated(EnumType.STRING)
-	private ERol nombre;
+	private Long rolId;
+	private String rolNombre;
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "rol")
+	private Set<UsuarioRol> usuarioRoles = new HashSet<>();
 
 }

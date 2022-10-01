@@ -34,8 +34,8 @@ public class DocentesTutoresController {
 	}
 
 	// BUSCAR
-	@GetMapping("/SearchTutor/{id}")
-	public DocenteTutor show(@PathVariable Long id) {
+	@GetMapping("/SearchTutor/{cedula}")
+	public DocenteTutor show(@PathVariable String id) {
 
 		return DocenteTutorService.findById(id);
 	}
@@ -64,7 +64,7 @@ public class DocentesTutoresController {
 	// ELIMINAR
 	@DeleteMapping("/DeleteTutor/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
+	public void delete(@PathVariable String id) {
 
 		DocenteTutorService.delete(id);
 	}

@@ -12,14 +12,17 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.ista.tecazuay.proyecto.models.primary.entity.Rol;
 import com.ista.tecazuay.proyecto.models.primary.entity.Usuario;
+import com.ista.tecazuay.proyecto.models.primary.entity.UsuarioRol;
 import com.ista.tecazuay.proyecto.models.repository.primary.dao.IUsuariosRepositoryDao;
+import com.ista.tecazuay.proyecto.models.repository.primary.dao.IverDocenteDao;
+import com.ista.tecazuay.proyecto.models.repository.primary.dao.IviewAlumnosDao;
+import com.ista.tecazuay.proyecto.models.repository.primary.dao.IviewCoordinadoresDao;
 import com.ista.tecazuay.proyecto.models.repository.secondary.dao.IVerpersonafDao;
 import com.ista.tecazuay.proyecto.models.service.IUsuarioService;
 
@@ -30,6 +33,15 @@ public class UsuarioController {
 
 	@Autowired
 	IVerpersonafDao personaFenix;
+
+	@Autowired
+	IverDocenteDao docenteFenix;
+
+	@Autowired
+	IviewCoordinadoresDao coordinadorFenix;
+
+	@Autowired
+	IviewAlumnosDao alumnoFenix;
 
 	@Autowired
 	IUsuariosRepositoryDao userRepository;
@@ -52,20 +64,51 @@ public class UsuarioController {
 	}
 
 	// GUARDAR
-	@PostMapping("/SaveUser")
+	@PostMapping("/signup")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Usuario create(@RequestBody Usuario usuario) throws Exception {
 
-		// verificando si esa en nuestra bd..
+		Rol rol = new Rol();
+		Set<UsuarioRol> userRoles = new HashSet<>();
+
+		// VERIFICAR SI HAY EXISTENCIA DE USUARIO EN NUESTRA BD..
 		if (!userRepository.existsByCedula(usuario.getCedula())) {
 
-			// verificando si el usuario que va registrarse esta en Fenix..
+			// VERIFICAR EXISTENCIA DE LA PERSONA EN LA BD DEL ISTA..
 			if (personaFenix.existsByCedula(usuario.getCedula())) {
 
-				// comprobando que no se ingrese un correo que ya fue ingresado..
+				// SE COMPRUEBA QUE NO SE REGISTRE UN CORREO PREVIAMENTE REGISTRADO..
 				if (!userRepository.existsByCorreo(usuario.getCorreo())) {
 
-					return UsuarioService.save(usuario);
+					// COMPROBAR SI LA CEDULA INGRESADA PERTENENCE A UN COORDINADOR
+					if (coordinadorFenix.existsByCedula(usuario.getCedula())) {
+
+						rol.setRolId(1L);
+						rol.setRolNombre("COORDINADOR");
+						UsuarioRol usuarioRol = new UsuarioRol();
+						usuarioRol.setUsuario(usuario);
+						usuarioRol.setRol(rol);
+
+						userRoles.add(usuarioRol);
+						return UsuarioService.save(usuario, userRoles);
+
+						// COMPROBAR SI LA CEDULA INGRESADA PERTENENCE A UN DOCENTE
+					} else if (alumnoFenix.existsByCedula(usuario.getCedula())) {
+
+						rol.setRolId(2L);
+						rol.setRolNombre("ESTUDIANTE");
+						UsuarioRol usuarioRol = new UsuarioRol();
+						usuarioRol.setUsuario(usuario);
+						usuarioRol.setRol(rol);
+
+						userRoles.add(usuarioRol);
+						return UsuarioService.save(usuario, userRoles);
+
+					} else {
+
+						throw new Exception("Error: No existe rol!");
+
+					}
 
 				} else {
 
@@ -84,20 +127,6 @@ public class UsuarioController {
 
 	}
 
-	// EDITAR
-	@PutMapping("/EditUser/{id}")
-	/*
-	 * @ResponseStatus(HttpStatus.CREATED) public Usuario update(@RequestBody
-	 * Usuario usuario, @PathVariable Long id) {
-	 * 
-	 * Usuario UsuarioActual = UsuarioService.findById(id);
-	 * UsuarioActual.setApellido(usuario.getApellido());
-	 * UsuarioActual.setNombre(usuario.getNombre());
-	 * UsuarioActual.setEmail(usuario.getEmail());
-	 * 
-	 * return UsuarioService.save(UsuarioActual); }
-	 */
-
 	// ELIMINAR
 	@DeleteMapping("/DeleteUser/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
@@ -108,10 +137,10 @@ public class UsuarioController {
 
 	@PostMapping("/signin")
 	public ResponseEntity<?> IniciarSesion(@RequestBody Usuario usuario) throws Exception {
-		// Estamos verificando si esa en nuestra bd..
+		// COMPROBAR SI EXISTE EL NOMBRE DE USUARIO EN NUESTRA BD..
 		if (userRepository.existsByCedula(usuario.getCedula())) {
 
-			// Estamos comprobando que no se ingrese un correo que ya fue ingresado..
+			// COMPROBAR SI CONINCIDE USUARIO Y CONTRASEÑA EN NUESTRA BD..
 			if (userRepository.existsByContrasenia(usuario.getContrasenia())) {
 
 				return null;

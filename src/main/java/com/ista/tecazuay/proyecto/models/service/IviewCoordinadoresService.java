@@ -4,7 +4,9 @@ import java.util.List;
 
 import com.ista.tecazuay.proyecto.models.primary.entity.viewCoordinadoresI;
 
-public interface IviewCoordinadoresIService {
+public interface IviewCoordinadoresService {
 
-	public List<viewCoordinadoresI>findAll();
+	public List<viewCoordinadoresI> findAll();
+
+	viewCoordinadoresI findByIdentificacion(String identificacion);
 }

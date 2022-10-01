@@ -10,6 +10,8 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Setter
 @Getter
@@ -30,9 +32,9 @@ public class Usuario {
 	@Temporal(TemporalType.DATE)
 	private Date date_nac;
 
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "usuario_roles", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_rol"))
-	private Set<Rol> roles = new HashSet<>();
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "usuario")
+	@JsonIgnore
+	private Set<UsuarioRol> usuarioRoles = new HashSet<>();
 
 	public Usuario(String nombre, String apellido, String cedula, String correo, String contrasenia, String numcelular,
 			Date date_nac) {
