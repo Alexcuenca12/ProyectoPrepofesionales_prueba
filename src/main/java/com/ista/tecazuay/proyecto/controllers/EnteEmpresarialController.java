@@ -34,7 +34,7 @@ public class EnteEmpresarialController {
 	}
 
 	// BUSCAR
-	@GetMapping("/SearchEnteEmp/{id}")
+	@GetMapping("/ListEnteEmp/{id}")
 	public EnteEmpresarial show(@PathVariable Long id) {
 
 		return EnteEmpresarialService.findById(id);
