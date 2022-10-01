@@ -15,10 +15,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class viewDocentes {
 	@Id
-	private String persona_identificacion;
-	private String persona_primer_nombre;
-	private String persona_primer_apellido;
-	private String docente_abreviatura;
-	private String docente_titulo;
-	private int docente_categoria;
+	private String cedula;
+	private String primernombre ;
+	private String primerapellido;
+	private String abreviatura;
+	private String titulo;
+	private int categoria;
 }
