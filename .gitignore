@@ -2,3 +2,5 @@
 src/main/resources/application.properties
 target/classes/application.properties
 target/classes/META-INF/maven/com.ista.tecazuay.proyecto/ProyectoPrepofesionales/pom.properties
+target/classes/application.properties
+target/classes/META-INF/maven/com.ista.tecazuay.proyecto/ProyectoPrepofesionales/pom.properties
