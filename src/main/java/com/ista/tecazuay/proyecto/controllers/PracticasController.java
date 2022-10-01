@@ -44,22 +44,26 @@ public class PracticasController {
 	@PostMapping("/SavePracticas")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Practicas create(@RequestBody Practicas practicas) {
-
 		return PracticasService.save(practicas);
 	}
 
 	// EDITAR
 	@PutMapping("/EditPracticas/{id}")
-	/*@ResponseStatus(HttpStatus.CREATED)
+	@ResponseStatus(HttpStatus.CREATED)
 	public Practicas update(@RequestBody Practicas practicas, @PathVariable Long id) {
 
 		Practicas PracticasActual = PracticasService.findById(id);
-		PracticasActual.setApellido(practicas.getApellido());
-		PracticasActual.setNombre(practicas.getNombre());
-		PracticasActual.setEmail(practicas.getEmail());
+		PracticasActual.setId_tutor_academico(practicas.getId_tutor_academico());
+		PracticasActual.setId_tutor_empresarial(practicas.getId_tutor_empresarial());
+		PracticasActual.setLugar(practicas.getLugar());
+		PracticasActual.setFecha_inicio(practicas.getFecha_inicio());
+		PracticasActual.setFecha_final(practicas.getFecha_final());
+		PracticasActual.setCarrera_solicitada(practicas.getCarrera_solicitada());
+		PracticasActual.setCantidad_estudiantes(practicas.getCantidad_estudiantes());
+		PracticasActual.setDescripcion(practicas.getDescripcion());
 
 		return PracticasService.save(PracticasActual);
-	}*/
+	}
 
 	// ELIMINAR
 	@DeleteMapping("/DeletePracticas/{id}")

@@ -9,5 +9,5 @@ public interface IListaPracticanteVService {
 	
 	public List<lista_practicantes_view> findAll();
 	public List<lista_practicantes_view> findbyconv(Long numconv);
-
+	public List<lista_practicantes_view> findbyreal(Long idreal);
 }
