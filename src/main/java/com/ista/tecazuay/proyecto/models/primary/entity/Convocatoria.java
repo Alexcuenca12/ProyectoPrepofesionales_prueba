@@ -30,6 +30,7 @@ public class Convocatoria implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_convocatoria;
+	private Long id_representante;
 	private Long id_practicas;
 	@Column(name = "fecha_recepcion")
 	@Temporal(TemporalType.DATE)
