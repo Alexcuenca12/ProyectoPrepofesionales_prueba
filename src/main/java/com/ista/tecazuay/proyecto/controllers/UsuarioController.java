@@ -93,6 +93,7 @@ public class UsuarioController {
 
 						rol.setRolId(1L);
 						rol.setRolNombre("DOCENTE TUTOR");
+						usuario.setRol("DOCENTE TUTOR");
 						UsuarioRol usuarioRol = new UsuarioRol();
 						usuarioRol.setUsuario(usuario);
 						usuarioRol.setRol(rol);
@@ -105,6 +106,7 @@ public class UsuarioController {
 
 						rol.setRolId(2L);
 						rol.setRolNombre("RESPONSABLE PRACTICAS");
+						usuario.setRol("RESPONSABLE PRACTICAS");
 						UsuarioRol usuarioRol = new UsuarioRol();
 						usuarioRol.setUsuario(usuario);
 						usuarioRol.setRol(rol);
@@ -117,6 +119,7 @@ public class UsuarioController {
 
 						rol.setRolId(3L);
 						rol.setRolNombre("COORDINADOR");
+						usuario.setRol("COORDINADOR");
 						UsuarioRol usuarioRol = new UsuarioRol();
 						usuarioRol.setUsuario(usuario);
 						usuarioRol.setRol(rol);
@@ -129,6 +132,7 @@ public class UsuarioController {
 
 						rol.setRolId(4L);
 						rol.setRolNombre("ESTUDIANTE");
+						usuario.setRol("ESTUDIANTE");
 						UsuarioRol usuarioRol = new UsuarioRol();
 						usuarioRol.setUsuario(usuario);
 						usuarioRol.setRol(rol);
@@ -151,6 +155,7 @@ public class UsuarioController {
 
 				rol.setRolId(5L);
 				rol.setRolNombre("RESPONSABLE EMPRESA");
+				usuario.setRol("RESPONSABLE EMPRESA");
 				UsuarioRol usuarioRol = new UsuarioRol();
 				usuarioRol.setUsuario(usuario);
 				usuarioRol.setRol(rol);
@@ -176,7 +181,7 @@ public class UsuarioController {
 
 		UsuarioService.delete(id);
 	}
-
+	
 	@PostMapping("/signin")
 	public ResponseEntity<?> IniciarSesion(@RequestBody Usuario usuario) throws Exception {
 		// COMPROBAR SI EXISTE EL NOMBRE DE USUARIO EN NUESTRA BD..
