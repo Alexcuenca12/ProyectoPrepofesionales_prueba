@@ -60,7 +60,7 @@ public class PracticasController {
 		PracticasActual.setFecha_final(practicas.getFecha_final());
 		PracticasActual.setCarrera_solicitada(practicas.getCarrera_solicitada());
 		PracticasActual.setCantidad_estudiantes(practicas.getCantidad_estudiantes());
-		PracticasActual.setDescripcion(practicas.getDescripcion());
+		PracticasActual.setActividades(practicas.getActividades());
 
 		return PracticasService.save(PracticasActual);
 	}
