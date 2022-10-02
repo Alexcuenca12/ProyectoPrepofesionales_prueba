@@ -20,7 +20,7 @@ public class Convenio implements Serializable {
 	private int numero_convenio;
 	private int numero_itv;
 	private String descripcion;
-	private String id_empresa;
+	private int id_empresa;
 	private String id_coordinador;
 
 	public Long getId_convenio() {
@@ -47,11 +47,11 @@ public class Convenio implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public String getId_empresa() {
+	public int getId_empresa() {
 		return id_empresa;
 	}
 
-	public void setId_empresa(String id_empresa) {
+	public void setId_empresa(int id_empresa) {
 		this.id_empresa = id_empresa;
 	}
 
