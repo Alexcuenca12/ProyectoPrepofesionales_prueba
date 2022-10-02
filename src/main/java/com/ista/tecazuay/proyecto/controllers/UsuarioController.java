@@ -104,7 +104,7 @@ public class UsuarioController {
 					} else if (responCarrera.existsByCedula(usuario.getCedula())) {
 
 						rol.setRolId(2L);
-						rol.setRolNombre("RESPONSABLE DE PRACTICAS");
+						rol.setRolNombre("RESPONSABLE PRACTICAS");
 						UsuarioRol usuarioRol = new UsuarioRol();
 						usuarioRol.setUsuario(usuario);
 						usuarioRol.setRol(rol);

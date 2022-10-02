@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @AllArgsConstructor
 @Table(name = "usuarios", uniqueConstraints = { @UniqueConstraint(columnNames = "cedula") })
 public class Usuario {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id_usuario;
