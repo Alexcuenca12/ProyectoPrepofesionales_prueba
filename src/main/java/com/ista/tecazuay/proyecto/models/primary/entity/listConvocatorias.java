@@ -1,6 +1,5 @@
 package com.ista.tecazuay.proyecto.models.primary.entity;
 
-
 import java.util.Date;
 
 import javax.persistence.Column;

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ista.tecazuay.proyecto.models.primary.entity.listConvocatorias;
 import com.ista.tecazuay.proyecto.models.service.IlistConvocatoriasService;
 
+
+
 @CrossOrigin(origins = { "http://localhost:4200" })
 @RestController
 @RequestMapping("/api")
