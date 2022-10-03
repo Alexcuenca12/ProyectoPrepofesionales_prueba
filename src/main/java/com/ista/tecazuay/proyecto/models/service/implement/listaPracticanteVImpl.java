@@ -41,6 +41,19 @@ public class listaPracticanteVImpl implements IListaPracticanteVService{
 	}
 	@Override
 	@Transactional(readOnly = true)
+	public List<lista_practicantes_view> findbypract(Long idpract) {
+		List<lista_practicantes_view> listarespuesta=new ArrayList<>();
+		List<lista_practicantes_view> listapracticas=(List<lista_practicantes_view>) ilistaPracticantesV.findAll();
+		for (int i = 0; i < listapracticas.size(); i++) {
+			if(listapracticas.get(i).getIdpractica()==idpract) {
+				listarespuesta.add(listapracticas.get(i));
+			}
+		}
+		
+		return listarespuesta;
+	}
+	@Override
+	@Transactional(readOnly = true)
 	public List<lista_practicantes_view> findbyreal(Long idreal) {
 		List<lista_practicantes_view> listarespuesta=new ArrayList<>();
 		List<lista_practicantes_view> listarealiza=(List<lista_practicantes_view>) ilistaPracticantesV.findAll();

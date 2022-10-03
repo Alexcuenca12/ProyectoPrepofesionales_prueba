@@ -1,5 +1,7 @@
 package com.ista.tecazuay.proyecto.models.primary.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -31,7 +33,14 @@ public class lista_practicantes_view {
 	private int numconvenio;
 	private String identicacion;
 	private String empresas;
-
+	
+	
+	private String correo;
+	private String carrera;
+	private Date fechafin;
+	private Date fechainicio;
+	private String descripcion;
+	
 	private Long numitv;
 
 	public int getIdrealizando() {
@@ -137,5 +146,50 @@ public class lista_practicantes_view {
 	public void setNumitv(Long numitv) {
 		this.numitv = numitv;
 	}
+
+	
+
+	public String getCarrera() {
+		return carrera;
+	}
+
+	public void setCarrera(String carrera) {
+		this.carrera = carrera;
+	}
+
+	public Date getFechafin() {
+		return fechafin;
+	}
+
+	public void setFechafin(Date fechafin) {
+		this.fechafin = fechafin;
+	}
+
+	public Date getFechainicio() {
+		return fechainicio;
+	}
+
+	public void setFechainicio(Date fechainicio) {
+		this.fechainicio = fechainicio;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	
+	
 
 }
