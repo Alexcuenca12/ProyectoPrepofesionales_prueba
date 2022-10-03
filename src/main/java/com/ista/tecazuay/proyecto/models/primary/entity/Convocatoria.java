@@ -40,7 +40,9 @@ public class Convocatoria implements Serializable {
 	private Date fecha_envio;
 	private String listadoMaterias;
 	private int ciclo;
-	private String nombreResponsable;
+	private String actividades;
+	private String carrera;
+	private String empresa;
 	
 	
 }
