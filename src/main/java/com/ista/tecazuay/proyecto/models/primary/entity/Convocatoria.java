@@ -12,7 +12,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "convocatorias")
 public class Convocatoria implements Serializable {
 
@@ -21,41 +30,17 @@ public class Convocatoria implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_convocatoria;
-	private String descripcion;
 	private Long id_representante;
+	private Long id_practicas;
+	@Column(name = "fecha_recepcion")
+	@Temporal(TemporalType.DATE)
+	private Date fecha_recepcion;
 	@Column(name = "fecha_envio")
 	@Temporal(TemporalType.DATE)
 	private Date fecha_envio;
-
-	public Long getId_convocatoria() {
-		return id_convocatoria;
-	}
-
-	public void setId_convocatoria(Long id_convocatoria) {
-		this.id_convocatoria = id_convocatoria;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	public Long getId_representante() {
-		return id_representante;
-	}
-
-	public void setId_representante(Long id_representante) {
-		this.id_representante = id_representante;
-	}
-
-	public Date getFecha_envio() {
-		return fecha_envio;
-	}
-
-	public void setFecha_envio(Date fecha_envio) {
-		this.fecha_envio = fecha_envio;
-	}
+	private String listadoMaterias;
+	private int ciclo;
+	private String nombreResponsable;
+	
+	
 }

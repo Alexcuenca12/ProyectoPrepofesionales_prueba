@@ -1,5 +1,6 @@
 package com.ista.tecazuay.proyecto.models.service.implement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.tecazuay.proyecto.models.primary.entity.RepresentanteEmpresa;
+import com.ista.tecazuay.proyecto.models.primary.entity.lista_practicantes_view;
 import com.ista.tecazuay.proyecto.models.repository.primary.dao.IRepresentanteEmpresaDao;
 import com.ista.tecazuay.proyecto.models.service.IRepresentanteEmpresaService;
 
@@ -41,8 +43,15 @@ public class RepresentanteEmpresaServiceImpl implements IRepresentanteEmpresaSer
 	@Override
 	@Transactional(readOnly = true)
 	public RepresentanteEmpresa findById(String cedula) {
-
-		return RepresentanteEmpresaDao.findById(cedula).orElse(null);
+		RepresentanteEmpresa respuesta=new RepresentanteEmpresa();
+		List<RepresentanteEmpresa> lista=(List<RepresentanteEmpresa>) RepresentanteEmpresaDao.findAll();
+		for (int i = 0; i < lista.size(); i++) {
+			if(lista.get(i).getCedula().equals(cedula)) {
+				respuesta=(lista.get(i));
+			}
+		}
+		
+		return respuesta;
 	}
 
 	@Override
